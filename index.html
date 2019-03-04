@@ -1,0 +1,337 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Consulting and coaching — тренинги, консультирование, анализ</title>
+<link href="media-queries.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="image/shina-02.png">
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+ 	<script src="http://ajax.go
+
+<script src="jquery-1.10.2.min.js"></script>
+<script src="lightbox-2.6.min.js"></script>
+<link href="lightbox.css" rel="stylesheet">
+
+      <script>
+	$(function() {
+
+		function filterPath(string) {
+			return string
+			.replace(/^\//,'')
+			.replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+			.replace(/\/$/,'');
+		}
+
+		var locationPath = filterPath(location.pathname);
+		var scrollElem = scrollableElement('html', 'body');
+
+		// Any links with hash tags in them (can't do ^= because of fully qualified URL potential)
+		$('a[href*=#]').each(function() {
+
+			// Ensure it's a same-page link
+			var thisPath = filterPath(this.pathname) || locationPath;
+			if (  locationPath == thisPath
+				&& (location.hostname == this.hostname || !this.hostname)
+				&& this.hash.replace(/#/,'') ) {
+
+					// Ensure target exists
+					var $target = $(this.hash), target = this.hash;
+					if (target) {
+
+						// Find location of target
+						var targetOffset = $target.offset().top;
+						$(this).click(function(event) {
+
+							// Prevent jump-down
+							event.preventDefault();
+
+							// Animate to target
+							$(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
+
+								// Set hash in URL after animation successful
+								location.hash = target;
+
+							});
+						});
+					}
+			}
+
+		});
+
+		// Use the first element that is "scrollable"  (cross-browser fix?)
+		function scrollableElement(els) {
+			for (var i = 0, argLength = arguments.length; i <argLength; i++) {
+				var el = arguments[i],
+				$scrollElement = $(el);
+				if ($scrollElement.scrollTop()> 0) {
+					return el;
+				} else {
+					$scrollElement.scrollTop(1);
+					var isScrollable = $scrollElement.scrollTop()> 0;
+					$scrollElement.scrollTop(0);
+					if (isScrollable) {
+						return el;
+					}
+				}
+			}
+			return [];
+		}
+
+	});
+	</script>
+
+
+<!-- TABS -->
+
+  <link rel="stylesheet" href="jquery-ui-1.10.3.custom.css" />
+  <script src="jquery-1.9.1.js"></script>
+  <script src="jquery-ui-1.10.3.custom.js"></script>
+  <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+  </script>
+
+
+
+
+
+
+
+</head>
+<body>
+
+<!--_________________________________________
+
+                                    HEAD
+_________________________________________-->
+<div id="main_container">
+<img class="img_main" src="image/main img _1920x700.jpg" width="1920" height="700"  alt=""/>
+<div class="title_container">
+  <div class="title_container_text">Co&Co - консалтинговая компания, специализирующаяся на автомобильном бизнесе</div>
+</div>
+<div id="head_container_background"></div>
+<div id="head_container">
+  <div id="head">
+  <img id="logo" src="image/CoCo logo.png" width="283" height="50" alt=""/>
+  <div id="menu">
+  <nav id="primary_nav">
+    <ul>
+      <li><a href="#main_logo">УСЛУГИ</a></li>
+      <li><a href="#main_logo_work">О КОМПАНИИ</a></li>
+      <li><a href="#footer_content">КОНТАКТЫ</a></li>
+      </ul>
+  </nav>
+  </div>
+  </div>
+</div>
+<div id="delimetr">
+    <div class="title_section">Наши услуги</div>
+  </div>
+
+
+
+  <!--_________________________________________
+
+                                     WORK
+_________________________________________-->
+
+
+
+  <div class="module">
+    <div class="container">
+      <div class="content_head"><span style="font-size: 26px; font-style: normal; color: #000000;">Сфера деятельности</span><br>
+	   <ul class="ul_title">
+		   <li>Тренинги</li>
+ 	       <li>Консультирование и анализ</li>
+     	   <li>Организация мероприятий</li>
+     	   <li>Разработка стандартов</li>
+       </ul>
+        </div>
+      <div id="content_head_img"><img src="image/content_head_img.png" width="538" height="186" alt=""/></div>
+
+</div>
+  </div>
+
+
+  <div id="module_tabs">    <!-- Tabs -->
+    <div class="container">
+  <div id="content_tabs">
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1">Тренинги</a></li>
+        <li><a href="#tabs-2">Консультирование и анализ</a></li>
+        <li><a href="#tabs-3">Другие услуги</a></li>
+        </ul>
+      <div id="tabs-1">
+       <br>
+<p><span style="font-size: 20px;">Практическая ориентированность тренингов</span></p>
+<p>
+Мы работаем с разными категориями персонала — от руководителей до линейных сотрудников. Создаем тренинги, направленные на тактический результат или программы обучения, когда каждый тренинг является логическим продолжением предыдущего. Наши тренинги интерактивны и построены с использованием коучинговых технологий, что позволяет максимально полно воспринимать теоретическую часть, получать ответы на самые сложные вопросы, заряжаться энергией коллектива участников и возвращаться на рабочие места с приливом энтузиазма.</p>
+<div class="tabs_delimetr"></div>
+
+<p><span style="font-size: 20px;">Наши основные тренинги</span></p>
+<li><span style="font-weight: bold">Тренинги в сфере продаж.</span> У нас есть различные курсы по повышению качества продаж, обслуживания и коммуникаций по телефону (работа с «холодными» звонками). Основные тренинги в данном разделе: навыки продаж, телефонные переговоры, активные продажи.</li>
+<li><span style="font-weight: bold">Область послепродажного обслуживания</span>. Как известно, труднее всего не получить клиента, а удержать его. Поэтому мы предлагаем целый ряд тренингов в этой сфере: клиентоориентированный сервис, послепродажное обслуживание, управление конфликтами и т. п.</li>
+<li><span style="font-weight: bold">Тренинги для руководителей.</span> Хорошая команда идет от руководителя. Наш спектр курсов для охватыет все руководящие должности в ДЦ. К ним относятся: управление персоналом, экономика сервисом, управление временем, основы лидерства, а также профильные тренинги к конкретным должностям. </li>
+</p>
+<div class="tabs_delimetr"></div>
+<p><span style="font-size: 20px;">Обратная связь о тренингах от наших клиентов</span></p>
+<p>Качество нашей работы подтверждено в благодарственных письмах от наших клиентов:</p>
+
+
+<a href="image/feedback/feedback_importer-1.jpg" data-lightbox="roadtrip"><div class="tabs_feedback_img"><img src="image/feedback/feedback_symbol_importer-1.jpg" width="100" height="150" alt=""/></div></a>
+
+<a href="image/feedback/feedback_importer-2.jpg" data-lightbox="roadtrip"><div class="tabs_feedback_img"><img src="image/feedback/feedback_symbol_importer-2.jpg" width="100" height="150" alt=""/></div></a>
+
+<a href="image/feedback/feedback_importer-3.jpg" data-lightbox="roadtrip"><div class="tabs_feedback_img"><img src="image/feedback/feedback_symbol_importer-3.jpg" width="100" height="150" alt=""/></div></a>
+
+<a href="image/feedback/feedback_importer-4.jpg" data-lightbox="roadtrip"><div class="tabs_feedback_img"><img src="image/feedback/feedback_symbol_importer-4.jpg" width="100" height="150" alt=""/></div></a>
+
+<a href="image/feedback/feedback_importer-5.jpg" data-lightbox="roadtrip"><div class="tabs_feedback_img"><img src="image/feedback/feedback_symbol_importer-5.jpg" width="100" height="150" alt=""/></div></a>
+
+<p>Полный список <a href="file/letters_training.pdf" target="new">благодарственных писем</a></p>
+
+<p>После каждого тренинга мы собираем обраную связь с непосредственных участников тренинга через форму обратной связи (ФОС):
+</p>
+
+<a href="image/feedback/feedback_FOS-1.jpg" data-lightbox="roadtrip"><div class="tabs_feedback_img"><img src="image/feedback/feedback_symbol_FOS-1.jpg" width="100" height="150" alt=""/></div></a>
+
+<a href="image/feedback/feedback_FOS-2.jpg" data-lightbox="roadtrip"><div class="tabs_feedback_img"><img src="image/feedback/feedback_symbol_FOS-2.jpg" width="100" height="150" alt=""/></div></a>
+
+<a href="image/feedback/feedback_FOS-3.jpg" data-lightbox="roadtrip"><div class="tabs_feedback_img"><img src="image/feedback/feedback_symbol_FOS-3.jpg" width="100" height="150" alt=""/></div></a>
+
+<a href="image/feedback/feedback_FOS-4.jpg" data-lightbox="roadtrip"><div class="tabs_feedback_img"><img src="image/feedback/feedback_symbol_FOS-4.jpg" width="100" height="150" alt=""/></div></a>
+
+<a href="image/feedback/feedback_FOS-5.jpg" data-lightbox="roadtrip"><div class="tabs_feedback_img"><img src="image/feedback/feedback_symbol_FOS-5.jpg" width="100" height="150" alt=""/></div></a>
+
+        </div>
+
+
+
+
+      <div id="tabs-2">
+      <br>
+<p><span style="font-size: 20px;">Коучинг</span></p>
+<p>
+Наши сотрудники не принимают решения за менеджмент клиента и не заменяют его, а, используя коучинг, помогают определить проблемы и найти решения самостоятельно. Эта технология не вызывает зависимости от присутствия консультанта. Для большинства дилеров работа консультантов — это старт для перехода на новый уровень эффективности, создание новых систем ценностей, развитие внутренней мотивации. Коучинг является инструментом, который помогает решить сложные психологические проблемы клиента в областях лидерства, ответственности, уверенности, перегрузки и идентификации.</p>
+<div class="tabs_delimetr"></div>
+
+<p><span style="font-size: 20px;">Основные направления деятельности в области консультирования</span></p>
+<li><span style="font-weight: bold">Практическое консультирование на предприятии.</span> Вся наша работа проходит непосредственно на предприятии. Вся работа делится на этапы:<br><br>
+
+  <span style="font-style: italic">Этап 1:</span><br>
+<img src="image/project phase1.png" width="600" height="58"  alt=""/><br>
+
+  <span style="font-style: italic">Этап 2:</span><br>
+<img src="image/project phase2.png" width="600" height="58"  alt=""/><br>
+
+  <span style="font-style: italic">Этап 3:</span><br>
+<img src="image/project phase3.png" width="600" height="58"  alt=""/><br>
+<br>
+</li>
+<li><span style="font-weight: bold">Аудит в сфере продаж и послепродажного обслуживания</span>. Если вы заинтересованы в сборе данных о работе ваших сотрудников, то мы готовы выполнить проверку ваших отделов на предприятии.</li>
+</p>
+<div class="tabs_delimetr"></div>
+<p><span style="font-size: 20px;">Обратная связь о проведенной работе на предприятиях</span></p>
+<p>Отзывы по нашей работе на предприятиях:
+</p>
+<a href="image/feedback/feedback_coaching-1.jpg" data-lightbox="roadtrip"><div class="tabs_feedback_img"><img src="image/feedback/feedback_symbol_coaching-1.jpg" width="100" height="150" alt=""/></div></a>
+
+<a href="image/feedback/feedback_coaching-2.jpg" data-lightbox="roadtrip"><div class="tabs_feedback_img"><img src="image/feedback/feedback_symbol_coaching-2.jpg" width="100" height="150" alt=""/></div></a>
+
+<a href="image/feedback/feedback_coaching-3.jpg" data-lightbox="roadtrip"><div class="tabs_feedback_img"><img src="image/feedback/feedback_symbol_coaching-3.jpg" width="100" height="150" alt=""/></div></a>
+
+<a href="image/feedback/feedback_coaching-4.jpg" data-lightbox="roadtrip"><div class="tabs_feedback_img"><img src="image/feedback/feedback_symbol_coaching-4.jpg" width="100" height="150" alt=""/></div></a>
+
+<a href="image/feedback/feedback_coaching-5.jpg" data-lightbox="roadtrip"><div class="tabs_feedback_img"><img src="image/feedback/feedback_symbol_coaching-5.jpg" width="100" height="150" alt=""/></div></a>
+
+        </div>
+
+
+
+
+
+
+      <div id="tabs-3">
+       <br>
+<p><span style="font-size: 20px;">Другие услуги по обучению</span></p>
+<p>
+Помимо основной деятельности мы организовываем различные мероприятия и обучения, выходящие за рамки стандартных тренингов и мероприятий.</p>
+<div class="tabs_delimetr"></div>
+<br>
+
+<li><span style="font-weight: bold">Дистанционное обучение (вебинары).</span> егодня дистанционное обучение активно внедряется в бизнес-практику. Оно органично впитывает в себя компьютерные и Интернет-технологии обучения. Мы предоставляем услуги по построению системы дистанционного обучения, исходя из Ваших потребностей и запросов современной бизнес-среды.</li>
+<li><span style="font-weight: bold">Индивидуальные программы. Разработка стандарто.в</span>. Мы осуществляем разработку индивидуальных программ под Ваш конкретный запрос с учетом специфики Вашего бизнеса.</li>
+<li><span style="font-weight: bold">Посттренинговое сопровождение.</span> Сопровождение участников обучения и анализ результатов после всех проведенных мероприятий является гарантом качества и практической применимости полученных знаний, навыков и инструментов.</li>
+</p>
+        </div>
+      </div>
+  </div>
+
+
+  <div id="tabs_info">
+  <div id="tabs_contact">
+    <img class="tabs_sybmol-1" src="image/symbol-01.png" width="20" height="20"  alt=""/>
+    <img class="tabs_sybmol-2" src="image/symbol-02.png" width="20" height="20"  alt=""/> Тел.: <span style="color: #0072BC">+7 (499) 177-26-00</span><br><br>
+    <br>
+    По всем вопросам пишите на&nbsp;эл.&nbsp;почту: <span style="color: #0072BC; font-weight: bold;"><a href="mailto:info@coandco.ru">info@coandco.ru</a></span></div>
+
+    <div id="tabs_catalog">Подробную информацию о наших тренингах (с&nbsp;описанием программы, целевой аудитории и продллжительности) вы можете посмотреть&nbsp;в нашем каталоге:
+      <a href="file/CC_catalog_2013_web.pdf" target="new"><div id="catalog_button"><img id="img_catalog_button" src="image/catalog image.jpg" width="90" height="45"  alt=""/>
+        <div id="text_catalog_button">Каталог о&nbsp;тренингах</div>
+      </div></a>
+      В данном каталоге представлены программы курсов для автомобильного бизнеса, но также применимы и для не профильной аудитории
+    </div>
+  </div>
+
+
+    </div>
+
+
+
+
+  . </div>
+<!--_________________________________________
+
+                                     FEEDBACK
+_________________________________________-->
+
+
+
+
+</div>
+</div>
+<footer>
+  <div id="footer_content">
+           <div id="contact_copyright">
+       Consulting and coaching © 2013</div>
+       <div id="contact_adress">
+Адрес:<br>
+109316, г. Москва, <br>
+Волгоградский пр., д. 47, стр. 1</div>
+       <div id="contact_phone">
+Тел.:<br>
++7 (499) 177-26-00</div>
+
+
+<a href="http://www.linkedin.com/company/2900374"><div id="contact_logo_linkedin"></div></a>
+
+
+
+
+
+    <a href="https://www.facebook.com/pages/Consulting-and-Coaching/526914724007116"><div id="contact_logo_facebook"></div></a>
+
+
+  </div>
+</footer>
+
+
+
+
+
+
+
+</body>
+</html>
